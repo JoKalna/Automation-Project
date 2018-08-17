@@ -17,8 +17,5 @@ namespace AutomationFramework
     public static class Driver
     {
         public static IWebDriver driver = new ChromeDriver();
-
-
-
     }
 }

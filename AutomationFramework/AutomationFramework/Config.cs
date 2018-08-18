@@ -44,7 +44,7 @@ namespace AutomationFramework
                 }
                 public static class Email
                 {
-                    public static string IncorrectEmail = "11@example.com"
+                    public static string IncorrectEmail = "11@example.com";
                     public static string IncorrectSecondEmail = "two@example.com";
 
                 }

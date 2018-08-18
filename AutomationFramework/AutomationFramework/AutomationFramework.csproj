@@ -59,10 +59,13 @@
     <Compile Include="Config.cs" />
     <Compile Include="Driver.cs" />
     <Compile Include="EntryPoint.cs" />
+    <Compile Include="NavigateTo.cs" />
     <Compile Include="UI Elements\HomePage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UI Elements\Menu.cs" />
     <Compile Include="UI Elements\RightSideBar.cs" />
+    <Compile Include="UI Elements\TestCasePage.cs" />
+    <Compile Include="UI Elements\TestScenarioPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

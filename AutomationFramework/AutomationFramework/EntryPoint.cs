@@ -14,24 +14,22 @@ namespace AutomationFramework
     {
         static void Main()
         {
-            /* This will navigate to the testing website and use the driver specified in the drivers.cs class
+            /* This will navigate to the testing website and use the
+             * driver specified in the drivers.cs class
              */ 
 
             Driver.driver.Navigate().GoToUrl("http://testing.todvachev.com");
             NavigateTo.NaviateToThroughTheMenu();
-            Thread.Sleep(5000);
 
-            Driver.driver.Navigate().GoToUrl("http://testing.todvachev.com");
-            NavigateTo.LogInFormThroughThePost();
-            Thread.Sleep(5000);
-
-            Driver.driver.Quit();
-
-            /* Accessin config file
-            / This resembles plain english and understandable language
-                Below is a crumbtrail of accessing Credential class, witin that class Invalid username, with fourcharacters test
+            /*This is where you have to provide username, password and repeat password
+            /usng config file to supply the login details 
+            e.g valid credentials
             */
-            //  Config.Credentials.Invalid.Username.FourCharacters;
+
+            Actions.FillLoginForm(Config.Credentials.Valid.Username,
+                                  Config.Credentials.Valid.Password,
+                                  Config.Credentials.Valid.RepeatPassword);
+
 
         }
     }

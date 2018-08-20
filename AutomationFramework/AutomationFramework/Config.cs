@@ -21,7 +21,7 @@ namespace AutomationFramework
             {
                 public static string Username = "ValidUser";
                 public static string Password = "asdf123!";
-                public static string RepeatPassword = "asdf123";
+                public static string RepeatPassword = "asdf123!";
                 public static string Email = "example@example.com";
 
             }

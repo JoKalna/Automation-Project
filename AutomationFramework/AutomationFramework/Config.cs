@@ -50,5 +50,11 @@ namespace AutomationFramework
                 }
             }
         }
+
+        public static class AlertMessages
+        {
+            //appears as text on the message as below
+            public static string SuccesfullLogin = "Succesfull Login";
+        }
     }
 }

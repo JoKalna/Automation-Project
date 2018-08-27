@@ -39,6 +39,8 @@ namespace AutomationFramework
                 {
                     public static string PasswordJustNumbersInvalid = "1234";
                     public static string PasswordIncorrect = "testing123";
+                    public static string PasswordFourCharacters = "1234";
+                    public static string PasswordThirteenCharacters = "asdfhjklzxcv1234";
 
 
                 }
@@ -56,6 +58,7 @@ namespace AutomationFramework
             //appears as text on the message as below
             public static string SuccesfullLogin = "Succesful login!";
             public static string UserNameOutOfRange = "User Id should not be empty / length be between 5 to 12";
+            public static string PasswordOutOfRange = "Password should not be empty / length be between 5 to 12";
         }
     }
 }

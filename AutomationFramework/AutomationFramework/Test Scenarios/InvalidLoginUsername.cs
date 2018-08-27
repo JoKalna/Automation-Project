@@ -67,13 +67,6 @@ namespace AutomationFramework
             alert.Accept();
         }
 
-
-
-        public void ValidLogin()
-        {
-           
-        }
-
         //user assertions to confirm if test is succesfull
         //use IAlert to recognise that th test is validd
 

@@ -19,9 +19,8 @@ namespace AutomationFramework
             //create log in element 
             TestScenarioPage tsPage = new TestScenarioPage();
             //calling a method that are stored in Menu.cs
-            Thread.Sleep(5000);
+       
             menu.TestScenarios.Click();
-            Thread.Sleep(5000);
             tsPage.LogInFormScenario.Click();
 
 

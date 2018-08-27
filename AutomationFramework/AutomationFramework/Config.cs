@@ -54,7 +54,8 @@ namespace AutomationFramework
         public static class AlertMessages
         {
             //appears as text on the message as below
-            public static string SuccesfullLogin = "Succesfull Login";
+            public static string SuccesfullLogin = "Succesful login!";
+            public static string UserNameOutOfRange = "User Id should not be empty / length be between 5 to 12";
         }
     }
 }

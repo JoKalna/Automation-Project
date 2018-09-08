@@ -11,7 +11,6 @@ namespace AutomationFramework
         {
 
         }
-
         //initialise Alert here
         IAlert alert;
         /*This is where you have to provide username, password and repeat password

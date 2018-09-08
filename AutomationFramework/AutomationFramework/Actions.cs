@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 using AutomationFramework.UI_Elements;
+using OpenQA.Selenium.Chrome;
 
 namespace AutomationFramework
 {
@@ -18,6 +19,9 @@ namespace AutomationFramework
     {
         public static void InitlizeDriver()
         {
+            // new test intialise in its own driver and then quick the driver
+            //when it goes to the second driver it will initalise it in its class then close it at the end
+            Driver.driver = new ChromeDriver();
             Driver.driver.Navigate().GoToUrl(Config.BaseURL);
 
         }

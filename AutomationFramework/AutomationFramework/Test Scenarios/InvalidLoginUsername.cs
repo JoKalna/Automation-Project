@@ -4,6 +4,9 @@ using System.Threading;
 
 namespace AutomationFramework
 {
+
+    [Parallelizable]
+
     public class InvalidLoginUsername
 
     {

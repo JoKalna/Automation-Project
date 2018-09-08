@@ -4,6 +4,8 @@ using System.Threading;
 
 namespace AutomationFramework.Test_Scenarios
 {
+
+    [Parallelizable]
     class LogInWithInvalidPassword
     {
         IAlert alert;

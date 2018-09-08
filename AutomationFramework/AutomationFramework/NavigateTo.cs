@@ -18,12 +18,9 @@ namespace AutomationFramework
             //initialise test scenario page
             //create log in element 
             TestScenarioPage tsPage = new TestScenarioPage();
-            //calling a method that are stored in Menu.cs
-       
+            //calling a method that are stored in Menu.cs      
             menu.TestScenarios.Click();
             tsPage.LogInFormScenario.Click();
-
-
         }
 
         public static void LogInFormThroughThePost()

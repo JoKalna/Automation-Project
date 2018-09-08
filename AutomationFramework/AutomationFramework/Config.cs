@@ -5,7 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 /* Config file is used for vairables that are used in multiple places and
- * through out the framework. E.g username, we can all anywhere in our classess as they are public static s
+ * through out the framework. E.g username, we can all anywhere in our classess as they are public static
+ * Basically all the data we need it for our tests.
  */
 
 
@@ -50,7 +51,8 @@ namespace AutomationFramework
                     public static string IncorrectSecondEmail = "two@example.com";
 
                 }
-            }
+            }              
+
         }
 
         public static class AlertMessages

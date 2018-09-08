@@ -60,7 +60,7 @@ namespace AutomationFramework
         }
 
 
-        //Need to figure out how to use this to take a screensot of an element (alert box)
+        //Need to figure out how to use th
     /*    public static void TakeAScreenshot()
         {
             IWebDriver chrome = new ChromeDriver();

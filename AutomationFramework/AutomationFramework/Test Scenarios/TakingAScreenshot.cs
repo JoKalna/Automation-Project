@@ -10,9 +10,7 @@ namespace AutomationFramework.Test_Scenarios
     {
         public TakingAScreenshot()
 
-        {
-
-
+        {           
 
         }
 

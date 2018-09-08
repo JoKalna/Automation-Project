@@ -18,6 +18,7 @@ namespace AutomationFramework.Test_Scenarios
         {
             Actions.InitlizeDriver();
             NavigateTo.NaviateToThroughTheMenu();
+
         }
 
 

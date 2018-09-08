@@ -19,17 +19,14 @@ namespace AutomationFramework
                       e.g valid credentials
         //Setting up Nunit.Framework 
         //set up everything before the test starts!*/
-
-
-        [SetUp]
+ 
+        [OneTimeSetUp]
         public void Initlize()
         {
             Actions.InitlizeDriver();
             NavigateTo.NaviateToThroughTheMenu();
         }
         //between SetUp and TearDown creat tests.
-
-
         //first test method
 
         /* Equal to see what we expect vs actual
@@ -40,7 +37,6 @@ namespace AutomationFramework
 
         public void LessThan5Char()
         {
-            NavigateTo.NaviateToThroughTheMenu();
             Actions.FillLoginForm(Config.Credentials.Invalid.Username.FourCharacters,
                                 Config.Credentials.Valid.Password,
                                 Config.Credentials.Valid.RepeatPassword);
@@ -76,7 +72,7 @@ namespace AutomationFramework
          * ID? Need a bit of research on how to creat good assertions
         */
 
-        [TearDown]
+        [OneTimeTearDown]
         public void CleanUp()
         {
             Driver.driver.Quit();

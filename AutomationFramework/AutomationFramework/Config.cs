@@ -19,7 +19,7 @@ namespace AutomationFramework
         {
             public static class Valid
             {
-                public static string Username = "ValidUser";
+                public static string Username = "valid";
                 public static string Password = "asdf123!";
                 public static string RepeatPassword = "asdf123!";
                 public static string Email = "example@example.com";
@@ -30,7 +30,7 @@ namespace AutomationFramework
             {
                 public static class Username
                 {
-                    public static string FourCharacters = "Asdf";
+                    public static string FourCharacters = "Asd";
                     public static string ThirteenCharacters = "AsdfAsdfAsdfAsdf";
                     
 

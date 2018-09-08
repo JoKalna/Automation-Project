@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
+using System.Threading;
 
 namespace AutomationFramework.Test_Scenarios
 {
@@ -11,7 +12,8 @@ namespace AutomationFramework.Test_Scenarios
         {
         }
 
-        [SetUp]
+        [OneTimeSetUp]
+
         public void Initialize()
         {
             Actions.InitlizeDriver();
@@ -23,9 +25,12 @@ namespace AutomationFramework.Test_Scenarios
 
         public void LessThanFiveChars()
         {
+
             Actions.FillLoginForm(Config.Credentials.Valid.Username,
                                   Config.Credentials.Invalid.Password.PasswordFourCharacters,
                                   Config.Credentials.Invalid.Password.PasswordFourCharacters);
+
+            Thread.Sleep(5000);
 
             alert = Driver.driver.SwitchTo().Alert();
             Assert.AreEqual(Config.AlertMessages.PasswordOutOfRange, alert.Text);
@@ -35,17 +40,17 @@ namespace AutomationFramework.Test_Scenarios
         [Test]
         public void MoreThan12Chars()
         {
-
             Actions.FillLoginForm(Config.Credentials.Valid.Username,
                 Config.Credentials.Invalid.Password.PasswordThirteenCharacters,
                 Config.Credentials.Invalid.Password.PasswordThirteenCharacters);
 
+            Thread.Sleep(5000);
             alert = Driver.driver.SwitchTo().Alert();
             Assert.AreEqual(Config.AlertMessages.PasswordOutOfRange, alert.Text);
             alert.Accept();
         }
 
-        [TearDown]
+        [OneTimeTearDown]
 
         public void CleanUp()
         {

@@ -31,9 +31,19 @@ namespace AutomationFramework
                                         string repeatpassword)
         {
          LogInScenarioPost lsPost = new LogInScenarioPost();
+
+            //using clear to clear any content before its run. e.g. all the inputs in the field.
+            //Need to find a better way of how to clear down rather than coppying it 3 times
+
+            lsPost.UserNameField.Clear();
             lsPost.UserNameField.SendKeys(username);
+
+            lsPost.PasswordField.Clear();
             lsPost.PasswordField.SendKeys(password);
+
+            lsPost.RepeatPasswordField.Clear();
             lsPost.RepeatPasswordField.SendKeys(repeatpassword);
+            
             lsPost.LogInButton.Click();
         
         }

@@ -3,6 +3,7 @@ using SeleniumExtras.PageObjects;
 using AutomationFramework.UI_Elements;
 using OpenQA.Selenium.Chrome;
 using System.IO;
+using System;
 
 namespace AutomationFramework
 {
@@ -29,9 +30,11 @@ namespace AutomationFramework
             // new test intialise in its own driver and then quick the driver
             //when it goes to the second driver it will initalise it in its class then close it at the end
 
-            Driver.driver = new ChromeDriver();
-            Driver.driver.Navigate().GoToUrl(Config.BaseURL);
+            IWebDriver driver = new ChromeDriver();
+            driver.Navigate().GoToUrl(Config.BaseURL);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
         }
+
         /* This method is sending a simple text to the log in form
         *Fill in the arguments for each of the fields
         */

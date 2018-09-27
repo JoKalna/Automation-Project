@@ -11,10 +11,12 @@ namespace AutomationFramework
     public class HomePage
     {
         //short cut to constructor ctor tab,tab - creates a constructor
-        public HomePage()
+        public HomePage(IWebDriver driver)
         {
-          
+
+            PageFactory.InitElements(driver, this);
         }
+
 
 
     }

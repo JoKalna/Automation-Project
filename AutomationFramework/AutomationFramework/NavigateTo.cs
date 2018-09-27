@@ -1,6 +1,7 @@
 ﻿
 
 using AutomationFramework.UI_Elements;
+using OpenQA.Selenium;
 using System.Threading;
 
 namespace AutomationFramework
@@ -11,23 +12,23 @@ namespace AutomationFramework
     public static class NavigateTo
     {
 
-        public static void NaviateToThroughTheMenu()
+        public static void NaviateToThroughTheMenu(IWebDriver driver)
         {
             //using a method that is created in UI Elements
-            Menu menu = new Menu();
+            Menu menu = new Menu(driver);
             //initialise test scenario page
             //create log in element 
-            TestScenarioPage tsPage = new TestScenarioPage();
+            TestScenarioPage tsPage = new TestScenarioPage(driver);
             //calling a method that are stored in Menu.cs      
             menu.TestScenarios.Click();
             tsPage.LogInFormScenario.Click();
         }
 
-        public static void LogInFormThroughThePost()
+        public static void LogInFormThroughThePost(IWebDriver driver)
         {
             //using UI elements form Menu.cs method
-            Menu menu = new Menu();
-            TestCasePage tsPage = new TestCasePage();
+            Menu menu = new Menu(driver);
+            TestCasePage tsPage = new TestCasePage(driver);
             Thread.Sleep(5000);
             //TestCase can be found under menue.cs
             menu.TestCases.Click();

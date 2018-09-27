@@ -17,6 +17,8 @@ using System.Runtime.InteropServices;
 //Allows to run tests in paralel and multiple at one go.
 //our case its 2
 [assembly: Parallelizable(ParallelScope.Fixtures)]
+
+
 [assembly: LevelOfParallelism(2)]
 // Setting ComVisible to false makes the types in this assembly not visible
 // to COM components.  If you need to access a type in this assembly from

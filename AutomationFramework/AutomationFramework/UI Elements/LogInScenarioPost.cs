@@ -9,9 +9,9 @@ namespace AutomationFramework.UI_Elements
 
     class LogInScenarioPost
     {
-        public LogInScenarioPost()
+        public LogInScenarioPost(IWebDriver driver)
         {
-            PageFactory.InitElements(Driver.driver, this);
+            PageFactory.InitElements(driver, this);
         }
 
         [FindsBy(How = How.Name, Using = "userid")]

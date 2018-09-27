@@ -10,9 +10,9 @@ namespace AutomationFramework
     public class InvalidLoginUsername
 
     {
-        public InvalidLoginUsername()
+        public InvalidLoginUsername(IWebDriver driver)
         {
-
+            PageFactory.InitElements(driver, this);
         }
         //initialise Alert here
         IAlert alert;

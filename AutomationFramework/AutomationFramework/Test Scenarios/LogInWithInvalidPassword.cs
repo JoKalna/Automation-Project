@@ -10,8 +10,10 @@ namespace AutomationFramework.Test_Scenarios
     {
         IAlert alert;
 
-        public LogInWithInvalidPassword()
+        public LogInWithInvalidPassword(IWebDriver driver)
         {
+
+            PageFactory.InitElements(driver, this);
         }
 
         [OneTimeSetUp]

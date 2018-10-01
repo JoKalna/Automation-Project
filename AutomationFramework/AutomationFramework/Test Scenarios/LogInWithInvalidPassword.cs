@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using System.Threading;
+using SeleniumExtras.PageObjects;
 
 namespace AutomationFramework.Test_Scenarios
 {
@@ -9,19 +10,19 @@ namespace AutomationFramework.Test_Scenarios
     class LogInWithInvalidPassword
     {
         IAlert alert;
+        //property we can use across all classes
+        public IWebDriver Driver { get; set; }
 
-        public LogInWithInvalidPassword(IWebDriver driver)
+        public LogInWithInvalidPassword(IWebDriver Driver)
         {
-
-            PageFactory.InitElements(driver, this);
         }
 
         [OneTimeSetUp]
 
         public void Initialize()
         {
-            Actions.InitlizeDriver();
-            NavigateTo.NaviateToThroughTheMenu();
+            Driver = Actions.InitlizeDriver();
+            NavigateTo.NaviateToThroughTheMenu(Driver);
 
         }
 
@@ -33,11 +34,11 @@ namespace AutomationFramework.Test_Scenarios
 
             Actions.FillLoginForm(Config.Credentials.Valid.Username,
                                   Config.Credentials.Invalid.Password.PasswordFourCharacters,
-                                  Config.Credentials.Invalid.Password.PasswordFourCharacters);
+                                  Config.Credentials.Invalid.Password.PasswordFourCharacters, Driver);
 
             Thread.Sleep(5000);
 
-            alert = Driver.driver.SwitchTo().Alert();
+            alert = Driver.SwitchTo().Alert();
             Assert.AreEqual(Config.AlertMessages.PasswordOutOfRange, alert.Text);
             alert.Accept();
         }
@@ -47,10 +48,11 @@ namespace AutomationFramework.Test_Scenarios
         {
             Actions.FillLoginForm(Config.Credentials.Valid.Username,
                 Config.Credentials.Invalid.Password.PasswordThirteenCharacters,
-                Config.Credentials.Invalid.Password.PasswordThirteenCharacters);
+                Config.Credentials.Invalid.Password.PasswordThirteenCharacters,
+                Driver);
 
             Thread.Sleep(5000);
-            alert = Driver.driver.SwitchTo().Alert();
+            alert = Driver.SwitchTo().Alert();
             Assert.AreEqual(Config.AlertMessages.PasswordOutOfRange, alert.Text);
             alert.Accept();
         }
@@ -59,7 +61,7 @@ namespace AutomationFramework.Test_Scenarios
 
         public void CleanUp()
         {
-            Driver.driver.Quit();
+            Driver.Quit();
         }
 
 

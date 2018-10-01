@@ -24,7 +24,7 @@ namespace AutomationFramework
   
 
     {
-        public static void InitlizeDriver()
+        public static IWebDriver InitlizeDriver()
         {
 
             // new test intialise in its own driver and then quick the driver
@@ -33,6 +33,8 @@ namespace AutomationFramework
             IWebDriver driver = new ChromeDriver();
             driver.Navigate().GoToUrl(Config.BaseURL);
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+
+            return driver;
         }
 
         /* This method is sending a simple text to the log in form
@@ -41,10 +43,12 @@ namespace AutomationFramework
        
         public static void FillLoginForm(string username,
                                         string password,
-                                        string repeatpassword)
+                                        string repeatpassword,
+                                        IWebDriver driver)
 
         {
-            LogInScenarioPost lsPost = new LogInScenarioPost();
+            LogInScenarioPost lsPost = new LogInScenarioPost(driver);
+     
 
             //using clear to clear any content before its run. e.g. all the inputs in the field.
             //Find better way to clear all down before filling rather than 3 times

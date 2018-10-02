@@ -21,8 +21,6 @@ namespace AutomationFramework
        * with one copy of the field for each instance of the containing type.
    */
     public static class Actions
-  
-
     {
         public static IWebDriver InitlizeDriver()
         {

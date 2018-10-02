@@ -7,15 +7,18 @@ namespace AutomationFramework.Test_Scenarios
 {
 
     [Parallelizable]
-    class LogInWithInvalidPassword
+
+   public class LogInWithInvalidPassword
     {
-        IAlert alert;
-        //property we can use across all classes
-        public IWebDriver Driver { get; set; }
+    
 
         public LogInWithInvalidPassword(IWebDriver Driver)
         {
         }
+
+        IAlert alert;
+        //property we can use across all classes
+        public IWebDriver Driver { get; set; }
 
         [OneTimeSetUp]
 
@@ -23,7 +26,6 @@ namespace AutomationFramework.Test_Scenarios
         {
             Driver = Actions.InitlizeDriver();
             NavigateTo.NaviateToThroughTheMenu(Driver);
-
         }
 
 

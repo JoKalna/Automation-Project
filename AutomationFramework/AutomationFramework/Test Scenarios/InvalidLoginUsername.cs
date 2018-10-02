@@ -16,9 +16,9 @@ namespace AutomationFramework
     public class InvalidLoginUsername
 
     {
-        public InvalidLoginUsername(IWebDriver driver)
+        public InvalidLoginUsername()
         {
-            PageFactory.InitElements(driver, this);
+        
         }
         //initialise Alert here
         IAlert alert;
@@ -33,8 +33,8 @@ namespace AutomationFramework
         [OneTimeSetUp]
         public void Initlize()
         {
-           Driver =  Actions.InitlizeDriver();
-            NavigateTo.NaviateToThroughTheMenu(Driver);
+           Driver= Actions.InitlizeDriver();
+           NavigateTo.NaviateToThroughTheMenu(Driver);
         }
         //between SetUp and TearDown creat tests.
         //first test method
@@ -49,8 +49,7 @@ namespace AutomationFramework
         {
             Actions.FillLoginForm(Config.Credentials.Invalid.Username.FourCharacters,
                                 Config.Credentials.Valid.Password,
-                                Config.Credentials.Valid.RepeatPassword,
-                               Driver);
+                                Config.Credentials.Valid.RepeatPassword,Driver);
 
             Thread.Sleep(5000);
             alert = Driver.SwitchTo().Alert();
